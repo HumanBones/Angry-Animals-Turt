@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://bjq3lxypfjxfx"]
+[gd_scene load_steps=5 format=3 uid="uid://bjq3lxypfjxfx"]
 
 [ext_resource type="Texture2D" uid="uid://nx4ajmdc6tka" path="res://assets/assets/ui/panel_beige.png" id="1_vxgnf"]
 [ext_resource type="LabelSettings" uid="uid://d2fl1f3f3pdwl" path="res://scenes/level_button/new_label_settings.tres" id="2_3a05v"]
+[ext_resource type="Script" path="res://scenes/level_button/level_button.gd" id="2_gelh7"]
 [ext_resource type="LabelSettings" uid="uid://2m761c1sxwqo" path="res://scenes/level_button/24_white.tres" id="3_j0rgc"]
 
 [node name="LevelButton" type="TextureButton"]
@@ -20,6 +21,7 @@ pivot_offset = Vector2(50, 50)
 size_flags_horizontal = 4
 size_flags_vertical = 4
 texture_normal = ExtResource("1_vxgnf")
+script = ExtResource("2_gelh7")
 
 [node name="MC" type="MarginContainer" parent="."]
 layout_mode = 1
@@ -50,3 +52,7 @@ text = "10000
 label_settings = ExtResource("3_j0rgc")
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
+[connection signal="pressed" from="." to="." method="_on_pressed"]
